@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:38:07 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/07 17:55:15 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:16:32 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_list
 
 typedef struct s_dlist
 {
-	int				content;
+	void			*content;
 	struct s_dlist	*next;
 	struct s_dlist	*back;
 }	t_dlist;
@@ -101,14 +101,14 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
  */
 
 t_dlist		*ft_dlistlast(t_dlist *lst);
-t_dlist		*ft_dlistmap(t_dlist *lst, int (*f)(int));
+t_dlist		*ft_dlistmap(t_dlist *lst, void *(*f)(void *), void (*del)(void*));
 t_dlist		*ft_dlistnew(int content);
 int			ft_dlistsize(t_dlist *lst);
 void		ft_dlistadd_back(t_dlist **alst, t_dlist *new);
 void		ft_dlistadd_front(t_dlist **alst, t_dlist *new);
-void		ft_dlistclear(t_dlist **lst);
-void		ft_dlistdelone(t_dlist *lst);
-void		ft_dlistiter(t_dlist *lst, int (*f)(int));
+void		ft_dlistclear(t_dlist **lst, void (*del)(void*));
+void		ft_dlistdelone(t_dlist *lst, void (*del)(void*));
+void		ft_dlistiter(t_dlist *lst, void *(*f)(void *));
 
 /*
  *	autre
@@ -123,5 +123,6 @@ int			ft_putstr_unsigned_fd(unsigned char *s, int fd);
 size_t		ft_unsigned_strlen(const unsigned char *s);
 int			ft_abs(int a);
 long int	ft_atoi_long(const char *nptr);
+void		*__malloc(int size);
 
 #endif

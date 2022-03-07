@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:54 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/07 17:55:46 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:09:40 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (begin);
 }
 
-t_dlist	*ft_dlistmap(t_dlist *lst, int (*f)(int))
+t_dlist	*ft_dlistmap(t_dlist *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_dlist	*begin;
 	t_dlist	*index_lst;
@@ -47,7 +47,7 @@ t_dlist	*ft_dlistmap(t_dlist *lst, int (*f)(int))
 		new_elem = ft_dlistnew(f(index_lst->content));
 		if (!new_elem)
 		{
-			ft_dlistclear(&begin);
+			ft_dlistclear(&begin, del);
 			return (NULL);
 		}
 		index_lst = index_lst->next;

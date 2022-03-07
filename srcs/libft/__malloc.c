@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   __malloc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/25 16:25:48 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/07 18:09:02 by bsavinel         ###   ########.fr       */
+/*   Created: 2022/03/07 18:00:37 by bsavinel          #+#    #+#             */
+/*   Updated: 2022/03/07 18:16:16 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	*__malloc(int size)
 {
-	while (lst)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
-}
+	static t_dlist	**list_malloc;
+	t_dlist			*new;
+	void			*content;
 
-void	ft_dlistiter(t_dlist *lst, void *(*f)(void *))
-{
-	while (lst)
+	if (size < 0)
 	{
-		lst->content = f(lst->content);
-		lst = lst->next;
+		ft_dlistclear(list_malloc, &free);
+		return (NULL);
 	}
+	content = malloc(size);
+	if (!content)
+	{
+		ft_dlistclear(list_malloc, &free);
+		return (NULL);
+	}
+	new = ft_dlistnew(content);
+	if (!new)
+	{
+		free(content);
+		ft_dlistclear(list_malloc, &free);
+		return (NULL);
+	}
+	ft_dlistadd_back(list_malloc, new);
+	return (content);
 }

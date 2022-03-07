@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:43 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/07 17:55:35 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:09:48 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	}
 }
 
-void	ft_dlistclear(t_dlist **lst)
+void	ft_dlistclear(t_dlist **lst, void (*del)(void*))
 {
 	t_dlist	*tmp;
 
@@ -32,6 +32,6 @@ void	ft_dlistclear(t_dlist **lst)
 	{
 		tmp = *lst;
 		*lst = (*lst)->next;
-		ft_dlistdelone(tmp);
+		ft_dlistdelone(tmp, del);
 	}
 }
