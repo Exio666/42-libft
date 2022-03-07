@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:26:00 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/02/15 13:45:07 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:52 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-int	ft_chainsize(t_chain *lst)
+int	ft_dlistsize(t_dlist *lst)
 {
 	int		i;
-	t_chain	*tmp;
+	t_dlist	*tmp;
 
 	if (!lst)
 		return (0);

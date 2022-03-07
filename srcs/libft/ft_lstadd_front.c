@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:40 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/02/08 14:32:09 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:31 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_lstadd_front(t_list **alst, t_list *new)
 	*alst = new;
 }
 
-void	ft_chainadd_front(t_chain **alst, t_chain *new)
+void	ft_dlistadd_front(t_dlist **alst, t_dlist *new)
 {
-	t_chain	*first;
+	t_dlist	*first;
 
 	first = *alst;
 	new->next = first;

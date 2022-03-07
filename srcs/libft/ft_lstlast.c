@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:51 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/02/21 14:53:09 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:43 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_list	*ft_lstlast(t_list *lst)
 	return (last);
 }
 
-t_chain	*ft_chainlast(t_chain *lst)
+t_dlist	*ft_dlistlast(t_dlist *lst)
 {
-	t_chain	*last;
+	t_dlist	*last;
 
 	last = lst;
 	if (!last)

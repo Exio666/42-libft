@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:57 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/02/08 16:07:00 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 17:55:49 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ t_list	*ft_lstnew(void *content)
 	return (new);
 }
 
-t_chain	*ft_chainnew(int content)
+t_dlist	*ft_dlistnew(int content)
 {
-	t_chain	*new;
+	t_dlist	*new;
 
-	new = malloc(sizeof(t_chain));
+	new = malloc(sizeof(t_dlist));
 	if (!new)
 		return (NULL);
 	new->content = content;
