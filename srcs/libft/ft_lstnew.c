@@ -6,7 +6,7 @@
 /*   By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:25:57 by bsavinel          #+#    #+#             */
-/*   Updated: 2022/03/07 17:55:49 by bsavinel         ###   ########.fr       */
+/*   Updated: 2022/03/07 18:28:17 by bsavinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstnew(void *content)
 	return (new);
 }
 
-t_dlist	*ft_dlistnew(int content)
+t_dlist	*ft_dlistnew(void *content)
 {
 	t_dlist	*new;
 
