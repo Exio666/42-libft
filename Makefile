@@ -6,7 +6,7 @@
 #    By: bsavinel <bsavinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:34:09 by bsavinel          #+#    #+#              #
-#    Updated: 2022/03/04 14:35:00 by bsavinel         ###   ########.fr        #
+#    Updated: 2022/03/07 18:20:01 by bsavinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ PATH_GNL = gnl/
 PATH_PFT = pft/
 
 SRCS_LIBFT	= 	$(addprefix $(PATH_LIBFT),	\
+				__malloc.c					\
 				ft_atoi.c					\
 				ft_bzero.c					\
 				ft_calloc.c					\
